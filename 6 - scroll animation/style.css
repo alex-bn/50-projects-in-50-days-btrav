@@ -31,8 +31,8 @@ h1 {
   margin: 10px;
   border-radius: 10px;
   box-shadow: 2px 4px 5 px rgb(0, 0, 0, 0.3);
+  /* odds on the right side */
   transform: translateX(400%);
-  /* ods on the right side */
   transition: transform 0.4s ease;
 }
 
