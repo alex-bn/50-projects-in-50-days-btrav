@@ -4,6 +4,9 @@ const secondEl = document.querySelector('.second');
 const timeEl = document.querySelector('.time');
 const dateEl = document.querySelector('.date');
 const toggleEl = document.querySelector('.toggle');
+const needleSecond = document.querySelector('.needle.second');
+const needleMinute = document.querySelector('.needle.minute');
+const needleHour = document.querySelector('.needle.hour');
 
 const days = [
   'Sunday',
@@ -30,7 +33,6 @@ const months = [
 ];
 
 toggleEl.addEventListener('click', e => {
-  e.preventDefault();
   const html = document.querySelector('html');
   if (html.classList.contains('dark')) {
     html.classList.remove('dark');
@@ -44,6 +46,7 @@ toggleEl.addEventListener('click', e => {
 //
 function setTime() {
   const time = new Date();
+
   const month = time.getMonth();
   const day = time.getDay();
   const date = time.getDate();
@@ -56,7 +59,7 @@ function setTime() {
   hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     hoursForClock,
     0,
-    11,
+    12,
     0,
     360
   )}deg)`;
@@ -77,6 +80,13 @@ function setTime() {
     360
   )}deg)`;
 
+  needleHour.style.transition = `${hours === 0 ? 'none' : 'all 0.5s ease-in'}`;
+  needleMinute.style.transition = `${
+    minutes === 0 ? 'none' : 'all 0.5s ease-in'
+  }`;
+  needleSecond.style.transition = `${
+    seconds === 0 ? 'none' : 'all 0.5s ease-in'
+  }`;
   timeEl.innerHTML = `${hoursForClock}:${
     minutes < 10 ? `0${minutes}` : minutes
   } ${ampm}`;
@@ -91,5 +101,6 @@ function setTime() {
 }
 
 //
+
 setTime();
 setInterval(setTime, 1000);
