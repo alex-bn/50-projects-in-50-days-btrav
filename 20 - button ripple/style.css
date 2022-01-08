@@ -18,7 +18,7 @@ body {
 
 button {
   border-radius: 40px;
-  background: linear-gradient(90deg, #0162c8, #55e7fc);
+  background: linear-gradient(90deg, #aa076b, #61045f);
   color: #fff;
   border: none;
   font-size: 14px;
@@ -29,9 +29,9 @@ button {
   margin: 10px 0;
   position: relative;
 }
-
+/* https://uigradients.com/#Sunkist */
 button:nth-child(2) {
-  background: linear-gradient(90deg, #755bea, #ff72c0);
+  background: linear-gradient(90deg, #4364f7, #4364f7, #6fb1fc);
 }
 
 button:focus {
